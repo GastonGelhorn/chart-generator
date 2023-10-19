@@ -66,7 +66,6 @@ class ChartGenerator
                 'X-CHART-ACCOUNT' => config('chart-generator.key'),
                 'X-CHART-HASH' => hash('sha512', config('chart-generator.key').config('chart-generator.secret')),
             ]);
-
             $response = $request->post(rtrim(config('chart-generator.url'), '/').'/draw', [
                 'type' => 'mixed',
                 'size' => [
